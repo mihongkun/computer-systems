@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 typedef unsigned char *byte_pointer;
 
 void show_bytes(byte_pointer start,size_t len) {
@@ -32,7 +32,16 @@ void test_show_bytes(int val) {
 }
 
 int main(){
-	test_show_bytes(12345);	
+	test_show_bytes(12345);
+	printf("******************************\n");
+	test_show_bytes(0x87654321);	
+	printf("******************************\n");
+        test_show_bytes(6);
+	printf("******************************\n");
+        const char *s = "abcdef";
+	show_bytes((byte_pointer) s,strlen(s));
+	printf("%d",6^5);
 	return 0;
+
 }
 
